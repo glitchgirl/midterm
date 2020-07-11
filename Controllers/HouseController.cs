@@ -38,6 +38,16 @@ namespace Smtih_Midterm.Controllers
 
             return View(infos);
         }
+        public IActionResult Details(int Id)
+        {
+            var categories = context.Regions.OrderBy(c => c.RegionId).ToList();
+            Info info = context.Infos.Find(Id);
+            string imageFilename = info.CodeOut;
 
+            ViewBag.Regions = categories;
+            ViewBag.ImageFilename = imageFilename;
+
+            return View(info);
+        }
     }
 }
