@@ -142,3 +142,4 @@ C:\Users\jamie\source\repos\Smtih_Midterm\obj\Debug\netcoreapp3.1\Smtih_Midterm.
 C:\Users\jamie\source\repos\Smtih_Midterm\obj\Debug\netcoreapp3.1\Smtih_Midterm.genruntimeconfig.cache
 C:\Users\jamie\source\repos\Smtih_Midterm\obj\Debug\netcoreapp3.1\Razor\Views\Home\Index.cshtml.g.cs
 C:\Users\jamie\source\repos\Smtih_Midterm\obj\Debug\netcoreapp3.1\Razor\Views\House\List.cshtml.g.cs
+C:\Users\jamie\source\repos\Smtih_Midterm\obj\Debug\netcoreapp3.1\Razor\Views\House\Details.cshtml.g.cs

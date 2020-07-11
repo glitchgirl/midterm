@@ -34,10 +34,14 @@
                 @foreach (var house in Model)
                 {
                 <tr>
-                    <td>Picture</td>
-                    <td>@house.Address</td>
+                    <td></td>
+                    <td>@house.Address<br>time</td>
                     <td>@house.Price</td>
-                    <td>details</td>
+                    <td>
+                        <a asp-controller="house" asp-action="Details"
+                           asp-route-id="@house.HouseId"
+                           >View Details</a>
+                    </td>
                 </tr>
                 }
             </tbody>
