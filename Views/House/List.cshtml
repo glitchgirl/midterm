@@ -1,0 +1,47 @@
+﻿@model List<Info>
+@{
+    ViewBag.Title = "House Listings";
+}
+
+<h1>House Listings</h1>
+<div class="row">
+    <div class="col-sm-2">
+        <div class="dropdown">
+            <button class="dropbtn">County</button>
+            <div class="dropdown-content">
+                <a asp-controller="House" asp-action="List" asp-route-id="All"
+                   class="list-group-item @(ViewBag.SelectedCategoryName == "All" ? "active" : "")">All</a>
+                <a asp-controller="House" asp-action="List" asp-route-id="All"
+                   class="list-group-item @(ViewBag.SelectedCategoryName == "All" ? "active" : "")">All2</a>
+                <a asp-controller="House" asp-action="List" asp-route-id="All"
+                   class="list-group-item @(ViewBag.SelectedCategoryName == "All" ? "active" : "")">All3</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-sm-10">
+        <table class="table table-bordered table-striped">
+            <thead>
+                <tr>
+                    <th></th>
+                    <th>Address</th>
+                    <th>Price</th>
+                    <th></th>
+                </tr>
+            </thead>
+           
+            <tbody>
+                @foreach (var house in Model)
+                {
+                <tr>
+                    <td>Picture</td>
+                    <td>@house.Address</td>
+                    <td>@house.Price</td>
+                    <td>details</td>
+                </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+
+</div>
