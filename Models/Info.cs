@@ -15,6 +15,10 @@ namespace Smtih_Midterm.Models
 
         public Region Region { get; set; }
 
+        public int PhotoFilter { get; set; }
+
+        public Photos Photos { get; set; }
+
         public string Address { get; set; }
 
         public int Price { get; set; }
@@ -29,6 +33,8 @@ namespace Smtih_Midterm.Models
 
         public string CodeOut { get; set; }
 
-        public string CodeIn { get; set; }
+        public string Heating { get; set; }
+
+        public string AC { get; set; }
     }
 }

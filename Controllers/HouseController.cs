@@ -31,7 +31,7 @@ namespace Smtih_Midterm.Controllers
             }
             else
             {
-                infos = context.Infos.OrderBy(p => p.Region.Name == id).OrderBy(p => p.HouseId).ToList();
+                infos = context.Infos.Where(p => p.Region.Name == id).OrderBy(p => p.HouseId).ToList();
             }
             ViewBag.Regions = categories;
             ViewBag.SelectCategoryName = id;
@@ -42,10 +42,15 @@ namespace Smtih_Midterm.Controllers
         {
             var categories = context.Regions.OrderBy(c => c.RegionId).ToList();
             Info info = context.Infos.Find(Id);
-            string imageFilename = info.CodeOut;
+            Photos photos = context.Photos.Find(Id);
+            string imageFilename1 = photos.Pic1;
+            string imageFilename2 = photos.Pic2;
+            string imageFilename3 = photos.Pic3;
 
             ViewBag.Regions = categories;
-            ViewBag.ImageFilename = imageFilename;
+            ViewBag.ImageFilename1 = imageFilename1;
+            ViewBag.ImageFilename2 = imageFilename2;
+            ViewBag.ImageFilename3 = imageFilename3;
 
             return View(info);
         }

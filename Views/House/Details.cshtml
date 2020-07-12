@@ -5,8 +5,16 @@
 <h1>House Details</h1>
 <div class="row">
     <div class="col-sm-5">
-        <p>image not added</p>
+        <p> <img src="~/images/@Model.CodeOut" alt="there should be a picture here" class="images" /></p>
+        <table>
+            <tr>
+                <td><img src="~/images/@ViewBag.ImageFilename1" alt="there should be a picture here" class="imagesSmall" /></td>
+                <td><img src="~/images/@ViewBag.ImageFilename2" alt="there should be a picture here" class="imagesSmall" /></td>
+                <td><img src="~/images/@ViewBag.ImageFilename3" alt="there should be a picture here" class="imagesSmall" /></td>
+            </tr>
+        </table>
     </div>
+    <div class="col-sm-2"></div>
     <div class="col-sm-5">
         <h2>@Model.Address</h2>
         <table class="table table-bordered">
@@ -18,11 +26,29 @@
                 <td><b>Square Feet:</b></td>
                 <td> @Model.SqFt ft</td>
             </tr>
+            
             <tr>
                 <td><b>Year Built:</b></td>
                 <td> @Model.Year</td>
             </tr>
+            <tr>
+                <td><b>Amount of Bedrooms:</b></td>
+                <td>@Model.BedRCount</td>
+            </tr>
+            <tr>
+                <td><b>Amount of Bathrooms:</b></td>
+                <td>@Model.BathCount</td>
+            </tr>
+            <tr>
+                <td><b>Heating:</b></td>
+                <td>@Model.Heating</td>
+            </tr>
+            <tr>
+                <td><b>AC:</b></td>
+                <td>@Model.AC</td>
+            </tr>
+            
         </table>
     </div>
-    <div class="col-sm-2"></div>
+    
 </div>
