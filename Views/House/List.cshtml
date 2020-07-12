@@ -11,36 +11,37 @@
             <div class="dropdown-content">
                 <a asp-controller="House" asp-action="List" asp-route-id="All"
                    class="list-group-item @(ViewBag.SelectedCategoryName == "All" ? "active" : "")">All</a>
-                <a asp-controller="House" asp-action="List" asp-route-id="All"
-                   class="list-group-item @(ViewBag.SelectedCategoryName == "All" ? "active" : "")">All2</a>
-                <a asp-controller="House" asp-action="List" asp-route-id="All"
-                   class="list-group-item @(ViewBag.SelectedCategoryName == "All" ? "active" : "")">All3</a>
+                @foreach (Region r in ViewBag.Regions)
+                {
+
+                    <a asp-controller="House" asp-action="List" asp-route-id="@r.Name"
+                       class="list-group-item
+                             @(ViewBag.SelectedCategoryName == r.Name ? "active" : "")">
+                        @r.Name
+                    </a>
+
+                }
             </div>
         </div>
     </div>
 
     <div class="col-sm-10">
-        <table class="table table-bordered table-striped">
-            <thead>
-                <tr>
-                    <th></th>
-                    <th>Address</th>
-                    <th>Price</th>
-                    <th></th>
-                </tr>
-            </thead>
+        <table class="table table-bordered">
            
             <tbody>
                 @foreach (var house in Model)
                 {
                 <tr>
-                    <td class="images"></td>
-                    <td>@house.Address<br>time</td>
-                    <td>@house.Price</td>
                     <td>
                         <a asp-controller="house" asp-action="Details"
-                           asp-route-id="@house.HouseId"
-                           >View Details</a>
+                           asp-route-id="@house.HouseId">
+                            <img src="~/images/@house.CodeOut" alt="there should be a picture here" class="imagesSmall" />
+                        </a>
+                        <br><b>Square Feet: </b>@house.SqFt<br>
+                        <b>Price: $</b>@house.Price
+                    </td>
+                    <td><b>@house.Address</b><br>
+                    <b>Year Built:</b> @house.Year
                     </td>
                 </tr>
                 }
